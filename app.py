@@ -161,40 +161,27 @@ with tab4:
         st.text("For predicting the Remaining Useful Life, the same process was followed. Preprocess with ColumnTransformer, cross-validate with GridSearchCV and KFold, and get the best model based on RMSE (Root-Mean-Squared-Error). Models trained were Linear Regression, Ridge, Lasso, RandomForestRegressor and XGBoost Regressor and the target column was Working_Hours_Total.")
 
 with tab5:
-    if st.session_state.cleaned_dataset is not None:
-        st.header("Train models")
-        clicked = st.button("Train models (Logistic Regression, RandomForestClasifier, XGBoostClassifier)")
+        st.code("Logistic Regression was the model chosen for proceeding with predictions")
         st.markdown("<br><br>",unsafe_allow_html=True)
+        col1, col2 = st.columns(2)            
+        with col1:
+            image = Image.open("Pictures/Confusion_Matrix.png")
+            st.image(image, width=550)
+        with col2:
+            st.code("Recall (1) : 0.73\
+                    \nRecall (0) : 0.72\
+                    \nPrecision (1) : 0.40\
+                    \nPrecision (0) : 0.91\
+                    \nF1-Score (1) : 0.51\
+                    \nF1-Score (0) : 0.80")
 
-        if clicked:
-            plot, report = classification.train_classification(1,st.session_state.cleaned_dataset)
-            col1, col2 = st.columns(2)
-            with col1:
-                st.pyplot(plot)
-            with col2:
-                st.code(report)
-        else:
-            st.code("Logistic Regression was the model chosen for proceeding with predictions")
-            st.markdown("<br><br>",unsafe_allow_html=True)
-            col1, col2 = st.columns(2)            
-            with col1:
-                image = Image.open("Pictures/Confusion_Matrix.png")
-                st.image(image, width=550)
-            with col2:
-                st.code("Recall (1) : 0.73\
-                        \nRecall (0) : 0.72\
-                        \nPrecision (1) : 0.40\
-                        \nPrecision (0) : 0.91\
-                        \nF1-Score (1) : 0.51\
-                        \nF1-Score (0) : 0.80")
-
-                st.text("VERSUS")
-                st.code("Random Forest Classifier\
-                        \nBest F1-Score : 0.49\
-                        \nBest Recall : 0.60")
-                st.code("XGBoost Classifier\
-                        \nBest F1-Score : 0.44\
-                        \nBest Recall : 0.71")
+            st.text("VERSUS")
+            st.code("Random Forest Classifier\
+                    \nBest F1-Score : 0.49\
+                    \nBest Recall : 0.60")
+            st.code("XGBoost Classifier\
+                    \nBest F1-Score : 0.44\
+                    \nBest Recall : 0.71")
 
 with tab6:
     if st.session_state.cleaned_dataset is not None:
@@ -269,6 +256,7 @@ with tab8:
             else:
                 st.error(f"High Risk : Probability of failure : {(result[0]*100):.2f}%")
                 st.info(f"Remaining Life : {rul:.2f} hours")
+
 
 
 
