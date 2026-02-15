@@ -8,7 +8,7 @@ import preprocess_data
 from PIL import Image
 
 st.set_page_config(layout="wide")
-st.title("Predictive Maintenance")
+st.title("Predictive Maintenance - Global-Tech Industrial Solutions")
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(["Upload dataset","Preprocessed data","Preprocessing", "Training the models", "Logistic Regression","Evaluation", "RUL Prediction", "Predict"])
 
@@ -269,5 +269,6 @@ with tab8:
             else:
                 st.error(f"High Risk : Probability of failure : {(result[0]*100):.2f}%")
                 st.info(f"Remaining Life : {rul:.2f} hours")
+
 
 
