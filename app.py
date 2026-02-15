@@ -128,7 +128,7 @@ with tab4:
                 \n\t'Random Forest Classifier' : [RandomForestClassifier(random_state=42), {'classifier__max_depth':[20,50,100]}],\
                 \n\t'XGBoost Classifier' : [XGBClassifier(eval_metric='logloss',scale_pos_weight=20 random_state=42),{'classifier__n_estimators':[20,50,100,200]\
                 \n\t\t\t'classifier__learning_rate' : [0.1,0.3,0.5,0.7,1],'classifier__max_depth': [3, 5, 7],\
-                \n\t\t\t'classifier__subsample': [0.8, 1],'classifier__colsample_bytree': [0.8, 1]}],\}\
+                \n\t\t\t'classifier__subsample': [0.8, 1],'classifier__colsample_bytree': [0.8, 1]}]}\
                 \n\nf1_score_final = 0\
                 \nfinal_model = None\
                 \n\nfor model_train in models:\
@@ -269,6 +269,7 @@ with tab8:
             else:
                 st.error(f"High Risk : Probability of failure : {(result[0]*100):.2f}%")
                 st.info(f"Remaining Life : {rul:.2f} hours")
+
 
 
 
