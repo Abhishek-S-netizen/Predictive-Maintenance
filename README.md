@@ -1,7 +1,6 @@
 # Predictive Maintenance & Remaining Useful Life Prediction
 
 A machine learning-powered predictive maintenance system that analyzes industrial machinery sensor data to identify equipment at risk of failure and estimate its remaining operational life. The project combines classification models for failure prediction with regression models for Remaining Useful Life (RUL) estimation, helping organizations reduce unplanned downtime and optimize maintenance schedules.
-
 ---
 
 ## Features
