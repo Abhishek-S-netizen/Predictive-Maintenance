@@ -152,32 +152,6 @@ This solution enables organizations to:
 
 ---
 
-## Project Structure
-
-```text
-├── app.py
-├── preprocess_data.py
-├── classification.py
-├── regression.py
-├── globaltech_machinery_logs_P1_updated.csv
-├── globaltech_machinery_logs_clean.csv
-├── classification_model.pkl
-├── regression_model.pkl
-└── Pictures/
-```
-
----
-
-## Future Improvements
-
-- Real-time sensor data integration
-- Advanced Remaining Useful Life prediction using time-series models
-- Predictive maintenance alert system
-- Cloud deployment for enterprise-scale monitoring
-- Model retraining pipeline for continuous learning
-
----
-
 ## Author
 
 **Abhishek S**
